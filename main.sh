@@ -27,5 +27,6 @@ spawn ssh $USERNAME@$1
 expect "password:"
 sleep 1
 send "$PASSWORD\r"
+send systeminfo
   
 
