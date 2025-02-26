@@ -1,3 +1,8 @@
+## connor dedic
+## this is a bash script for running an attack simulation
+## do not use this for illegal purposes
+## this is designed for use on a kali vm
+
 #!/bin/bash
 
 ip=$1
