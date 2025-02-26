@@ -23,6 +23,9 @@ while read -r line; do
     USERNAME=$(echo "$line" | awk -F'login: |password: ' '{print $2}')
     PASSWORD=$(echo "$line" | awk -F'login: |password: ' '{print $3}')
 done
-
+spawn ssh $USERNAME@$1
+expect "password:"
+sleep 1
+send "$PASSWORD\r"
   
 
